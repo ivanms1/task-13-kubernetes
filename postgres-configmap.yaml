@@ -1,10 +1,10 @@
-apiVersion: kubedb.com/v1alpha1
+apiVersion: v1alpha1
 kind: Postgres
 metadata:
   name: hackerbay-tutorial
   namespace: demo
 spec:
-  version: 9.6
+  version: 9
   storage:
     storageClassName: "standard"
     accessModes:
