@@ -1,8 +1,7 @@
-apiVersion: v1alpha1
-kind: Postgres
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: hackerbay-tutorial
-  namespace: demo
+  name: postgres
 spec:
   version: 9
   storage:
