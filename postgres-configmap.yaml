@@ -1,18 +1,10 @@
-apiVersion: extensions/v1beta1
-kind: Deployment
+apiVersion: v1
+kind: ConfigMap
 metadata:
-  name: postgres
-spec:
-  version: 9
-  storage:
-    storageClassName: "standard"
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: 50Mi
-  init:
-    scriptSource:
-      gitRepo:
-        repository: "https://github.com/ivanms1/backend-task-13.git"
-        directory: "./init"
+  name: postgres-config
+  labels:
+    app: postgres
+data:
+  POSTGRES_DB: postgresdb
+  POSTGRES_USER: postgresadmin
+  POSTGRES_PASSWORD: admin123
